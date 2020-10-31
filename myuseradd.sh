@@ -65,6 +65,7 @@ function parse_command_options () {
 	;;
 	*)
 		echo "ERROR: Invalid option: $1" 
+		print_usage
 	;;
 
 esac
