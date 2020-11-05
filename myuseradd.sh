@@ -27,12 +27,13 @@ function print_usage () {
 function delete_user () {
 	echo "delete_user"
 	if [ "$1" != 'root' ]
-	then 
-		NUM_RESULTS = getent passwd | grep "$1" | wc -l 
-		if [ $NUM_RESULTS > 0 ]
-		then
-			userdel -r "$1"
+		then 
+			NUM_RESULTS = getent passwd | grep "$1" | wc -l 
+			if [ $NUM_RESULTS > 0 ]
+			then
+				userdel -r "$1"
 	fi
+	fi   
 
 }
 
