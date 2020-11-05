@@ -35,6 +35,7 @@ function delete_user () {
 		fi   
 	else
 		echo "ERROR: " "$1" " does not exist"
+	fi
 }
 
 
