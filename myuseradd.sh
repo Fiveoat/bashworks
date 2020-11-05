@@ -36,7 +36,7 @@ function delete_user () {
 				echo "$1" "is deleted"
 		fi   
 	else
-		echo "ERROR: " "$1" " does not exist"
+		echo "ERROR:" "$1" "does not exist"
 	fi
 }
 
@@ -54,9 +54,9 @@ function add_user () {
 	echo $NUM_RESULTS
 	if [ $NUM_RESULTS == "0" ]
 	then 
-		useradd -m "$1" -s "$3" && echo "$1":"$2" | chpasswd && echo "$1" "(" "$2" ")with " "$3" "is added"
+		useradd -m "$1" -s "$3" && echo "$1":"$2" | chpasswd && echo "$1" "(" "$2" ") with" "$3" "is added"
 	else
-		echo "ERROR: " "$1" "exists"
+		echo "ERROR:" "$1" "exists"
 	fi
 }
 
