@@ -46,7 +46,7 @@ function add_user () {
 	echo "$1" 
 	echo"$2" 
 	echo "$3"
-	adduser "$1" && echo "$1:$2" | chpasswd
+	adduser -m -s "$1" && echo "$1:$2" | chpasswd
 	echo "$2" | passwd "$1"
 }
 
