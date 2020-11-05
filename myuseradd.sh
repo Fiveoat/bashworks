@@ -44,7 +44,6 @@ function delete_user () {
 function add_user () {
 	echo "add_user"
 	adduser $username && echo "$username:$password" | chpasswd
-	echo "$password" | passwd --stdin "$login"
 }
 
 
