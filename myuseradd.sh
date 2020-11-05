@@ -43,8 +43,12 @@ function delete_user () {
 # 
 function add_user () {
 	echo "add_user"
-	useradd -m "$1" -s "$3" 
-	echo "$1":"$2" | chpasswd && echo "$1" "(" "$2" "with " "$3" " is added" || echo "ERROR: " "$1" "exists"
+	if [ getent passwd | grep "$1" | wc -l < 1 ]
+	then 
+		useradd -m "$1" -s "$3" && echo "$1":"$2" | chpasswd && echo "$1" "(" "$2" ")with " "$3" "is added"
+	else
+		echo "ERROR: " "$1" "exists"
+	fi
 }
 
 
