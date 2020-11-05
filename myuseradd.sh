@@ -27,7 +27,6 @@ function print_usage () {
 function delete_user () {
 	echo "delete_user"
 	NUM_RESULTS=`getent passwd | grep "$1" | wc -l`
-	echo $NUM_RESULTS
 	if [ $NUM_RESULTS != "0" ]
 	then
 		if [ "$1" != 'root' ]
@@ -51,7 +50,6 @@ function delete_user () {
 function add_user () {
 	echo "add_user"
 	NUM_RESULTS=`getent passwd | grep "$1" | wc -l`
-	echo $NUM_RESULTS
 	if [ $NUM_RESULTS == "0" ]
 	then 
 		useradd -m "$1" -s "$3" && echo "$1":"$2" | chpasswd && echo "$1" "(" "$2" ") with" "$3" "is added"
