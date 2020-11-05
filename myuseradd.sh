@@ -26,11 +26,15 @@ function print_usage () {
 #
 function delete_user () {
 	echo "delete_user"
-	if [ "$1" != 'root' ]
-		then 
-			getent passwd | grep "$1" | wc -l > 0 && userdel -r "$1" 2>/dev/null
-	fi   
-
+	if [ getent passwd | grep "$1" | wc -l > 0 ]
+	then
+		if [ "$1" != 'root' ]
+			then 
+				userdel -r "$1" 2>/dev/null
+				echo "$1" "is deleted"
+		fi   
+	else
+		echo "ERROR: " "$1" " does not exist"
 }
 
 
