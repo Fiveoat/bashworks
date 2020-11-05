@@ -26,7 +26,7 @@ function print_usage () {
 #
 function delete_user () {
 	echo "delete_user"
-	echo "$1"
+	echo "$@"
 	echo "$2"
 	echo "$3"	
 	echo "$0"
