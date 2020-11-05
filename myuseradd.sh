@@ -28,6 +28,7 @@ function delete_user () {
 	echo "delete_user"
 	echo "$1"
 	echo "$2"
+	echo "$3"	
 	echo "$0"
 	if [ "$1" != 'root' ]
 		then 
