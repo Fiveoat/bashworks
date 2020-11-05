@@ -32,7 +32,7 @@ function delete_user () {
 		if [ $NUM_RESULTS > 0 ]
 		then
 			userdel -r "$1"
-		fi
+	fi
 
 }
 
