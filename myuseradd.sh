@@ -26,11 +26,6 @@ function print_usage () {
 #
 function delete_user () {
 	echo "delete_user"
-	echo "$@"
-	echo "$2"
-	echo "$3"	
-	echo "$0"
-	echo "$#"
 	if [ "$1" != 'root' ]
 		then 
 			getent passwd | grep "$1" | wc -l > 0 && userdel -r "$1"
@@ -68,10 +63,10 @@ function parse_command_options () {
 		print_usage
 	;;
 	-d)
-		delete_user
+		delete_user "$1"
 	;;
 	-a)
-		add_user
+		add_user "$1" "$2" "$3"
 	;;
 	*)
 		echo "ERROR: Invalid option: $1" 
