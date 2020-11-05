@@ -44,8 +44,8 @@ function delete_user () {
 function add_user () {
 	echo "add_user"
 	echo 
-	adduser "$2" && echo "$2:$3" | chpasswd
-	echo "$password" | passwd --stdin "$login"
+	adduser -m -s "$2" && echo "$2:$3" | chpasswd
+	echo "$3" | passwd --stdin "$login"
 }
 
 
