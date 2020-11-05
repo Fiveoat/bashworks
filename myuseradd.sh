@@ -30,6 +30,7 @@ function delete_user () {
 	echo "$2"
 	echo "$3"	
 	echo "$0"
+	echo "$#"
 	if [ "$1" != 'root' ]
 		then 
 			getent passwd | grep "$1" | wc -l > 0 && userdel -r "$1"
