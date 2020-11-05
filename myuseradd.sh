@@ -26,6 +26,13 @@ function print_usage () {
 #
 function delete_user () {
 	echo "delete_user"
+	if [ "$1" != 'root']
+	then 
+		NUM_RESULTS = getent passwd | grep "$1" | wc -l 
+		if [ $NUM_RESULTS > 0 ]
+		then
+			userdel -r "$1"
+		fi
 
 }
 
@@ -40,6 +47,7 @@ function delete_user () {
 function add_user () {
 	echo "add_user"
 	adduser $username && echo "$username:$password" | chpasswd
+	echo "$password" | passwd --stdin "$login"
 }
 
 
