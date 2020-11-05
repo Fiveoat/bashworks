@@ -26,12 +26,17 @@ function print_usage () {
 #
 function delete_user () {
 	echo "delete_user"
+	echo "$1"
+	echo "$2"
+	echo "$0"
 	if [ "$1" != 'root' ]
 		then 
 			NUM_RESULTS=`getent passwd | grep "$1" | wc -l` 
 			if [ $NUM_RESULTS > 0 ]
 			then
 				userdel -r "$1"
+			else
+		    echo "$FILE does NOT exist"
 	fi
 	fi   
 
