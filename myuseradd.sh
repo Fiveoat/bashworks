@@ -31,7 +31,7 @@ function delete_user () {
 	then
 		if [ "$1" != 'root' ]
 			then 
-				userdel -r "$1" 2>/dev/null
+				userdel -r "$1"
 				echo "$1" "is deleted"
 		fi   
 	else
