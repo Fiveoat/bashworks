@@ -63,10 +63,10 @@ function parse_command_options () {
 		print_usage
 	;;
 	-d)
-		delete_user "$1"
+		delete_user "$2"
 	;;
 	-a)
-		add_user "$1" "$2" "$3"
+		add_user "$2" "$3" "$4"
 	;;
 	*)
 		echo "ERROR: Invalid option: $1" 
