@@ -32,13 +32,10 @@ function delete_user () {
 	echo "$0"
 	if [ "$1" != 'root' ]
 		then 
-			NUM_RESULTS=`getent passwd | grep "$1" | wc -l` 
-			if [ $NUM_RESULTS > 0 ]
-			then
-				userdel -r "$1"
+			getent passwd | grep "$1" | wc -l > 0 && userdel -r "$1"
 			else
-		    echo "$FILE does NOT exist"
-	fi
+		    	echo "$FILE does NOT exist"
+			fi
 	fi   
 
 }
