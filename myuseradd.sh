@@ -46,7 +46,7 @@ function add_user () {
 	echo "$1"
 	echo "$2"
 	useradd -m "$1" -s "$3" 
-	echo "$2" | passwd "$1" --stdin
+	echo "$1":"$2" | chpasswd
 }
 
 
