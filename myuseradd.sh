@@ -28,7 +28,7 @@ function delete_user () {
 	echo "delete_user"
 	NUM_RESULTS=`getent passwd | grep "$1" | wc -l`
 	echo $NUM_RESULTS
-	if [ $NUM_RESULTS > "0" ]
+	if [ $NUM_RESULTS != "0" ]
 	then
 		if [ "$1" != 'root' ]
 			then 
